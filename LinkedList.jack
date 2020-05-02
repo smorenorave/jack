@@ -1,0 +1,207 @@
+
+class LinkedList{
+    field Node head;
+    field Node temp;
+    field Node ant;
+    field int length;
+ 
+
+
+
+
+  
+     constructor LinkedList new(){
+         let head=null;
+         let length = 0;
+         return this;
+     } 
+
+     method int viewLength(){
+       return length;
+     }
+
+    
+     method Boolean isNull(){
+         if(head=null){
+         return true;
+      }
+      return this;
+    }
+      
+      method void addForward(int o){
+        var Node newNode;
+
+          if (head = null){
+          let head= Node.new(o);
+          let ant = head;
+    }
+     else{
+       let temp = Node.new(o);
+       let newNode = ant.addNext(temp);
+       let ant = temp;
+  }
+       let length = length + 1;
+       return;
+ }
+
+
+    method int viewNode(int index){
+         var int i;
+           let temp = head;
+           let i=0;
+
+           while(i<index){
+             let temp= temp.viewNext();
+             let i = i+1;
+           }
+          return temp.viewData(); 
+    }
+
+      method void viewAll(){
+          var int j;
+           let temp = head;
+           let j=0;
+          
+           do Output.println();
+           do Output.printString("Item list:");
+           do Output.println();
+            while(j<length){
+             do Output.printString("->");
+             do Output.printInt(viewNode(j));
+             let temp= temp.viewNext();
+             let j = j+1;
+           }
+          return; 
+    } 
+
+
+      method void byKeyboard(){
+        var int k,num,newLength;
+        
+        
+
+          let newLength = Keyboard.readInt("Length list: ");
+              while (k<newLength){
+              let num=Keyboard.readInt("#: ");
+              do addForward(num);
+              let k=k+1;
+          }
+        do Output.println();
+        
+        
+          return;
+      }
+
+      method void Automatic(int i){
+     var boolean vari;
+
+    while(i>0){
+        
+        if(vari){
+            do addForward(i+1);
+            let vari = false;
+        }else {
+            do addForward(i-1);
+            let vari = true;
+        }
+    
+    let i = i-1;
+       
+    
+    } 
+ return;
+ }
+
+      method void changeNode(int index, int nodeToChange){
+        var Node changeNode;
+        var int i;
+        let temp = head;
+        let i=0;
+           while(i<index){
+              let temp= temp.viewNext();
+              let i = i+1;
+           }
+          let changeNode=temp.addData(nodeToChange);
+        return;
+    }
+
+    method void bubbleSortLToG(){
+           var int aux,i,j;
+  
+      do Output.println();
+      do Output.printString("Least to greatest: ");
+      while (i<length){
+        let j=i;
+        while (j<length){
+          if (viewNode(i)>viewNode(j)){
+            let aux=viewNode(i);
+            do changeNode(i,viewNode(j));
+            do changeNode(j,aux);
+          }
+          let j=j+1;
+        }
+        let i=i+1;
+      }
+      do viewAll();
+
+      return;
+
+    }
+
+      method void bubbleSortGToL(){
+      var int aux,i,j;
+      do Output.println();
+      do Output.printString("Greatest to least: ");
+      while (i<length){
+
+        let j=i;
+        while (j<length){
+
+          if (viewNode(i)<viewNode(j)){
+            let aux=viewNode(i);
+            do changeNode(i,viewNode(j));
+            do changeNode(j,aux);
+          }
+          let j=j+1;
+        }
+        let i=i+1;
+      }
+      do viewAll();
+      return;
+
+    }    
+
+
+
+
+  method void selectionSort(){
+      var int i,j,less,index,aux;
+      let i=0;
+      while (i<(length-1)){
+        let less = viewNode(i);
+        let index = i;
+        let j=i+1;
+        while (j<length){
+          if (viewNode(j)<less){
+            let less=viewNode(j);
+            let index=j;
+          }
+          let j=j+1;
+        }
+        if (~(index=i)){
+          let aux = viewNode(i);
+          do changeNode(i,viewNode(index));
+          do changeNode(index,aux);
+        }
+        let i=i+1;
+      }
+     do viewAll();
+      return;
+    }
+
+
+
+
+
+
+}

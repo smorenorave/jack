@@ -1,0 +1,34 @@
+
+class Node{
+
+    field Node next;
+    field int data;  
+
+    constructor Node new(int newData){
+        
+         let data=newData;
+         let next = null;
+         return this;
+     } 
+
+     method Node viewNext(){
+        return next;
+    
+    } 
+
+    method void addNext(Node newNext){
+       let next = newNext;
+       return;
+    } 
+
+     method void addData(Node dataNew){
+       let data = dataNew;
+       return;
+    }    
+
+    method int viewData(){
+        return data;
+    }     
+
+
+}

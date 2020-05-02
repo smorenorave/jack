@@ -1,0 +1,34 @@
+class Main {
+ 
+    function void main() {
+        var LinkedList list;
+        //↓crea la lista nueva 
+     let list = LinkedList.new();
+        //↓ingresa los valores por teclado de la lista
+   do list.byKeyboard();
+        /*|Automatic crea una lista con valores aleatorios de forma automatica sin ingresar por teclado
+          ↓(DESCOMENTAR PARA PROBAR)*/
+   // do list.Automatic(105);
+        /*|Con addForward se puede añadir directamente el valor deseado en la ultima posicion de la lista
+          ↓(DESCOMENTAR PARA PROBAR)*/
+   // do list.addForward(4)
+         /*|viweAll revela todos los elementos de la lista sea creada manual o automatica
+           ↓(DESCOMENTAR PARA PROBAR)*/
+   do list.viewAll();
+        /*|Con bubbleSortLToG se puede organizar la lista de menor a mayor por el metodo burbuja
+          ↓(DESCOMENTAR PARA PROBAR)*/
+    do list.bubbleSortLToG();
+        /*|Con bubbleSortLToG se puede organizar la lista de mayor a menor por el metodo burbuja
+          ↓(DESCOMENTAR PARA PROBAR)*/
+   // do list.bubbleSortGToL();
+        /*|Con selectionSort se puede organizar la lista de menor a mayor por el metodo seleccion 
+          ↓(DESCOMENTAR PARA PROBAR)*/
+   //do list.selectionSort();
+       
+        
+        return;
+    
+    }
+
+
+}
